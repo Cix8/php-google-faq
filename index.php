@@ -150,7 +150,7 @@ $links_array = [
                             <?php if (gettype($single_answer) === "string") { ?>
                                 <?php foreach ($links_array as $link) {
                                     if (strpos($single_answer, $link) !== false) {
-                                        $single_answer = preg_replace('/'.$link.'/', "<a>" . $link . "</a>", $single_answer, 1);
+                                        $single_answer = preg_replace('/' . $link . '/', "<a>" . $link . "</a>", $single_answer, 1);
                                     }
                                 } ?>
                                 <p><?php echo $single_answer ?></p>
@@ -185,7 +185,7 @@ $links_array = [
                                 <?php foreach ($single_faq["subtitle_answer"] as $sub_answer) { ?>
                                     <?php foreach ($links_array as $link) {
                                         if (strpos($sub_answer, $link) !== false) {
-                                            $sub_answer = preg_replace('/'.$link.'/', "<a>" . $link . "</a>", $sub_answer, 1);
+                                            $sub_answer = preg_replace('/' . $link . '/', "<a>" . $link . "</a>", $sub_answer, 1);
                                         }
                                     } ?>
                                     <p> <?php echo $sub_answer ?> </p>
@@ -197,6 +197,32 @@ $links_array = [
             <?php } ?>
         </ul>
     </main>
+
+    <footer>
+        <div class="contents">
+            <div class="list-container">
+                <ul>
+                    <li> <a href="">Google</a> </li>
+                    <li> <a href="">Tutto su Google</a> </li>
+                    <li> <a href="">Privacy</a> </li>
+                    <li> <a href="">Termini</a> </li>
+                </ul>
+            </div>
+            <div class="lang-container">
+                <div class="icon-container">
+                    <i class="fab fa-font-awesome-flag"></i>
+                </div>
+                <div class="select-container">
+                    <select id="lang">
+                        <option value="it" selected>Italiano</option>
+                        <option value="en">English</option>
+                        <option value="fr">French</option>
+                        <option value="es">Espanol</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 

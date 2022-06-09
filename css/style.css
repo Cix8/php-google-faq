@@ -4,6 +4,7 @@
     --logo-yellow: #fbbc05;
     --logo-green: #39aa57;
     --header-gray: rgb(120, 120, 120);
+    --footer-bg: #f5f5f5;
 }
 
 /* COMMON */
@@ -147,4 +148,47 @@ li:not(li:first-child) .question {
 .answer ol li,
 .answer ul li {
     padding-left: 1rem;
+}
+
+footer {
+    padding: 2rem 0;
+    background-color: var(--footer-bg);
+}
+
+footer .contents {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contents ul {
+    display: flex;
+    list-style: circle;
+}
+
+.contents ul li:first-child {
+    list-style: none;
+}
+
+.contents li {
+    margin-right: 1.6rem;
+    font-size: .8rem;
+    color: var(--header-gray);
+}
+
+.contents .lang-container {
+    display: flex;
+    align-items: center;
+}
+
+.lang-container .icon-container {
+    margin-right: .5rem;
+    font-size: 1.2rem;
+    color: var(--logo-lightblue);
+}
+
+.lang-container .select-container select {
+    min-width: 200px;
 }
