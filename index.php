@@ -56,6 +56,20 @@ $faqs_array = [
         ]
     ]
 ];
+
+$links_array = [
+    "decisione della Corte di giustizia dell'Unione europea",
+    "modulo web",
+    "Centro Google per la sicurezza online",
+    "Scopri",
+    "contattare il webmaster",
+    "fai clic qui",
+    "visitare la nostra pagina di assistenza per avere ulteriori informazioni",
+    "URL referrer",
+    "Contattaci",
+    "qui"
+]
+
 ?>
 
 
@@ -134,6 +148,11 @@ $faqs_array = [
                     <div class="answer">
                         <?php foreach ($current_answer as $single_answer) { ?>
                             <?php if (gettype($single_answer) === "string") { ?>
+                                <?php foreach ($links_array as $link) {
+                                    if (strpos($single_answer, $link) !== false) {
+                                        $single_answer = str_replace($link, "<a>" . $link . "</a>", $single_answer);
+                                    }
+                                } ?>
                                 <p><?php echo $single_answer ?></p>
                             <?php } else if (gettype($single_answer) === "array") { ?>
                                 <ol>
@@ -164,6 +183,11 @@ $faqs_array = [
                             </div>
                             <div class="answer">
                                 <?php foreach ($single_faq["subtitle_answer"] as $sub_answer) { ?>
+                                    <?php foreach ($links_array as $link) {
+                                        if (strpos($sub_answer, $link) !== false) {
+                                            $sub_answer = str_replace($link, "<a>" . $link . "</a>", $sub_answer);
+                                        }
+                                    } ?>
                                     <p> <?php echo $sub_answer ?> </p>
                                 <?php } ?>
                             </div>

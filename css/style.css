@@ -117,6 +117,10 @@ main p {
     line-height: 25px;
 }
 
+main p a {
+    color: var(--logo-lightblue);
+}
+
 li .question,
 li .answer p {
     margin-bottom: 1.5rem;
