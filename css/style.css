@@ -108,9 +108,13 @@ li.active {
 
 /* MAIN */
 main {
-    width: 60%;
+    width: 65%;
     margin: 0 auto;
-    padding: 5rem 0 0;
+    padding: 5rem 0 3rem;
+}
+
+main p {
+    line-height: 25px;
 }
 
 li .question,
