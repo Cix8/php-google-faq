@@ -150,7 +150,7 @@ $links_array = [
                             <?php if (gettype($single_answer) === "string") { ?>
                                 <?php foreach ($links_array as $link) {
                                     if (strpos($single_answer, $link) !== false) {
-                                        $single_answer = str_replace($link, "<a>" . $link . "</a>", $single_answer);
+                                        $single_answer = preg_replace('/'.$link.'/', "<a>" . $link . "</a>", $single_answer, 1);
                                     }
                                 } ?>
                                 <p><?php echo $single_answer ?></p>
@@ -185,7 +185,7 @@ $links_array = [
                                 <?php foreach ($single_faq["subtitle_answer"] as $sub_answer) { ?>
                                     <?php foreach ($links_array as $link) {
                                         if (strpos($sub_answer, $link) !== false) {
-                                            $sub_answer = str_replace($link, "<a>" . $link . "</a>", $sub_answer);
+                                            $sub_answer = preg_replace('/'.$link.'/', "<a>" . $link . "</a>", $sub_answer, 1);
                                         }
                                     } ?>
                                     <p> <?php echo $sub_answer ?> </p>
