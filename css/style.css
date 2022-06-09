@@ -125,3 +125,17 @@ li .answer p {
 li:not(li:first-child) .question {
     padding-top: 3rem;
 }
+
+.answer ul {
+    list-style: lower-alpha;
+}
+
+.answer ol,
+.answer ul {
+    padding-left: 1rem;
+}
+
+.answer ol li,
+.answer ul li {
+    padding-left: 1rem;
+}

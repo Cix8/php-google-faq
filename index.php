@@ -24,10 +24,16 @@ $faqs_array = [
         "question" => "Perché il mio account è associato a un paese?",
         "answer" => [
             "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",
-            "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
-            "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
-            "Google LLC, con sede negli Stati Uniti, per il resto del mondo.",
-            "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.",
+            [
+                [
+                    "main_text" => "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
+                    "nested_contents" => [
+                        "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
+                        "Google LLC, con sede negli Stati Uniti, per il resto del mondo."
+                    ],
+                ],
+                "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali."
+            ],
             "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account."
         ],
         "subtitle" => "Stabilire il paese associato al tuo account",
@@ -127,9 +133,32 @@ $faqs_array = [
                     </div>
                     <div class="answer">
                         <?php foreach ($current_answer as $single_answer) { ?>
-                            <p><?php echo $single_answer ?></p>
+                            <?php if (gettype($single_answer) === "string") { ?>
+                                <p><?php echo $single_answer ?></p>
+                            <?php } else if (gettype($single_answer) === "array") { ?>
+                                <ol>
+                                    <?php foreach ($single_answer as $content) { ?>
+                                        <li>
+                                            <?php if (gettype($content) === "string") { ?>
+                                                <p> <?php echo $content ?> </p>
+                                            <?php } else { ?>
+                                                <p> <?php echo $content["main_text"] ?> </p>
+                                                <ul>
+                                                    <?php foreach ($content["nested_contents"] as $single_content) { ?>
+                                                        <li>
+                                                            <p>
+                                                                <?php echo $single_content ?>
+                                                            </p>
+                                                        </li>
+                                                    <?php } ?>
+                                                </ul>
+                                            <?php } ?>
+                                        </li>
+                                    <?php } ?>
+                                </ol>
+                            <?php } ?>
                         <?php } ?>
-                        <?php if ($single_faq["subtitle"]) { ?>
+                        <?php if (array_key_exists("subtitle", $single_faq)) { ?>
                             <div class="question">
                                 <h3> <?php echo $single_faq["subtitle"] ?> </h3>
                             </div>
