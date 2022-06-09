@@ -96,15 +96,16 @@ header .bottom ul {
 
 nav.bottom li {
     padding: 1rem 0 .5rem;
+    border-bottom: 3px solid transparent;
 }
 
 nav.bottom li:not(li:last-child) {
     margin-right: 2rem;
 }
 
-li.active {
+nav.bottom li.active {
     color: var(--logo-lightblue);
-    border-bottom: 3px solid var(--logo-lightblue);
+    border-color: var(--logo-lightblue);
 }
 
 /* MAIN */
@@ -150,6 +151,7 @@ li:not(li:first-child) .question {
     padding-left: 1rem;
 }
 
+/* FOOTER */
 footer {
     padding: 2rem 0;
     background-color: var(--footer-bg);
