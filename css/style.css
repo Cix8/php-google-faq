@@ -94,7 +94,7 @@ header .bottom ul {
 }
 
 nav.bottom li {
-    padding: 1rem 0;
+    padding: 1rem 0 .5rem;
 }
 
 nav.bottom li:not(li:last-child) {
@@ -104,4 +104,20 @@ nav.bottom li:not(li:last-child) {
 li.active {
     color: var(--logo-lightblue);
     border-bottom: 3px solid var(--logo-lightblue);
+}
+
+/* MAIN */
+main {
+    width: 60%;
+    margin: 0 auto;
+    padding: 5rem 0 0;
+}
+
+li .question,
+li .answer p {
+    margin-bottom: 1.5rem;
+}
+
+li:not(li:first-child) .question {
+    padding-top: 3rem;
 }
