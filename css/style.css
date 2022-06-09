@@ -121,6 +121,11 @@ main p a {
     color: var(--logo-lightblue);
 }
 
+main p a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 li .question,
 li .answer p {
     margin-bottom: 1.5rem;

@@ -67,7 +67,7 @@ $links_array = [
     "visitare la nostra pagina di assistenza per avere ulteriori informazioni",
     "URL referrer",
     "Contattaci",
-    "qui"
+    "qui."
 ]
 
 ?>
